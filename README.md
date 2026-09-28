@@ -1,24 +1,48 @@
-## Mini Project 1: Product Information System (Desain)
+# Mini Project 1: Product Information System
 
-### Tujuan
-Merancang blueprint sistem manajemen data informasi produk berbasis konsep teori yang telah dipelajari.
+Sistem informasi produk sederhana berbasis PHP yang menampilkan data produk dalam tabel HTML, menghitung total nilai aset gudang, dan menyorot produk dengan stok kritis.
 
-### Arsitektur Desain Konseptual
+## Arsitektur
 
-#### 1. Data Layer
-- File: `products.php`
-- Menyimpan data produk dalam multidimensional array
-- Field: ID, Nama, Kategori, Harga, Stok, Deskripsi
+Project ini memisahkan kode menjadi tiga layer:
 
-#### 2. Processing Layer
-- File: `functions.php`
-- Fungsi `hitungTotalNilaiStok()` untuk menghitung nilai aset gudang
-- Logika conditional untuk menyorot warna baris tabel jika stok kritis (< 3)
+| Layer | File | Fungsi |
+|-------|------|--------|
+| Data Layer | `products.php` | Menyimpan data produk dalam multidimensional array (ID, Nama, Kategori, Harga, Stok, Deskripsi) |
+| Processing Layer | `functions.php` | Berisi `hitungTotalNilaiStok()` dan `isStokKritis()` |
+| Presentation Layer | `index.php` | Menggabungkan semua file dengan `require_once` dan merender tabel HTML dengan `foreach` |
 
-#### 3. Presentation Layer
-- File: `index.php`
-- Menggabungkan semua komponen dengan `require_once`
-- Merender data ke tabel HTML menggunakan perulangan `foreach`
+## Fitur
 
-### Catatan
-Sesi ini hanya berfokus pada perancangan desain (tanpa coding).
+- Menampilkan daftar produk dalam bentuk tabel
+- Menghitung total nilai aset gudang (harga x stok)
+- Baris produk dengan stok kritis (< 3) diberi warna berbeda
+
+## Struktur Folder
+
+```
+mini-project-1/
+├── index.php
+├── products.php
+├── functions.php
+└── README.md
+```
+
+## Cara Menjalankan
+
+1. Install [XAMPP](https://www.apachefriends.org/) dan nyalakan **Apache**.
+2. Salin folder project ke `C:\xampp\htdocs\`.
+3. Buka browser dan akses:
+   ```
+   http://localhost/mini-project-1/index.php
+   ```
+
+## Teknologi
+
+- PHP
+- HTML & CSS
+- Git & GitHub
+
+## Author
+
+Luthfi Hakim
